@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>화살표 함수를 활용한 숫자 증가_감소</title>
+  <!-- 폰트어썸 cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <style>
+    .container{
+      width:550px;
+      border:1px solid #ccc;
+      padding:30px;
+      position:absolute;
+      left:50%; top:50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* 상품 선택 */
+    form > div:first-of-type{
+      display: flex;
+      justify-content: space-between;
+      border-bottom:1px solid #ccc;
+      padding-bottom:30px;
+    }
+
+    #product{
+      width:400px; height:40px;
+      padding:10px;
+      border:1px solid #ccc;
+    }
+
+    .prd_box{
+      border:1px solid #ccc;
+      padding:15px;
+      height:80px;
+    }
+
+    .prd_box > div:last-child{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #price{transform: translateY(-15px);}
+
+    .selected_prd{
+      display: flex;
+      justify-content: space-between;
+      height:40px;
+    }
+
+    .selected_prd > i{transform: translateY(5px)}
+
+    .totalPrice{
+      width:250px; height:30px;
+      margin:30px 0;
+      margin-left:340px !important;
+    }
+
+    #sum{font-size:30px; font-weight: bold;}
+
+    .num-box{
+      display:flex;
+      justify-content: space-around;
+      align-items: center;
+      width:100px; height:30px;
+      border:1px solid #ccc;
+    }
+
+    i{cursor: pointer;}
+
+    input[type="submit"]{
+      width:400px;
+      height:54px;
+      margin-top:20px;
+      background-color: #5f0080;
+      color:#fff;
+      transform: translateY(-5px);
+      cursor: pointer;
+      border:none;
+    }
+
+    input[type="checkbox"]{display:none;}
+
+    .icons{
+      border: 1px solid #ccc;
+      color:#ccc;
+      font-size:25px;
+      padding:8px 13px;
+      cursor: pointer;
+      margin-right:10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <legend></legend>
+      <div>
+        <p>구매 수량</p>
+  
+        <!-- 상품 선택 -->
+        <div>
+          <select id="product">
+            <option>상품을 선택해주세요</option>
+            <option data-name="유명산지 설향딸기 500g" data-price="15900">유명산지 설향딸기 500g</option>
+            <option data-name="제주감귤 500g" data-price="8000">제주감귤 500g</option>
+          </select>
+  
+          <!-- 선택한 상품 & 수량 & 가격 -->
+          <div class="prd_box">
+            <!-- 선택한 상품 -->
+            <div class="selected_prd">
+              <span id="prdName"></span>
+              <i class="fas fa-times" id="closeBtn"></i>
+            </div>
+
+            <!-- 수량 & 가격 -->
+            <div>
+              <!-- 수량 박스 -->
+              <div class="num-box">
+                <i class="fa-solid fa-minus" id="minus-btn"></i>
+                <p id="num"></p>
+                <i class="fa-solid fa-plus" id="plus-btn"></i>
+              </div>
+              <!-- 가격 -->
+              <p id="price">&nbsp;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="totalPrice">총 상품금액: <span id="sum">&nbsp;</span></p>
+      <div>
+        <input type="checkbox" id="heart">
+        <label for="heart" class="icons"><i class="fa-regular fa-heart"></i></label>
+        <input type="checkbox" id="bell">
+        <label for="bell" class="icons"><i class="fa-regular fa-bell"></i></label>
+        <input type="submit" value="장바구니 담기">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    let n=1;
+    let m=0;
+
+    showNum = (a,b) => {
+      document.getElementById(a).innerHTML = b;
+    }
+
+    showNum('num',n);
+
+    // 수량 마이너스 버튼 누르면
+    document.getElementById('minus-btn').addEventListener('click', () => {
+      if(n>1){
+        n-=1;
+      }else{
+        n=1;
+      }
+      
+      showNum('num',n);
+      showNum('sum',(m*n).toLocaleString()+'원');
+    });
+
+    // 수량 플러스 버튼 누르면
+    document.getElementById('plus-btn').addEventListener('click', () => {
+      n+=1;
+
+      showNum('num',n);
+      showNum('sum',(m*n).toLocaleString()+'원');
+    });
+
+    // 옵션 선택하면 가격 표시
+    const product = document.getElementById('product')
+    document.getElementById('product').addEventListener('change', () => {
+      if(product.selectedIndex!=0){
+        const option = product.options[product.selectedIndex];
+        m = Number(option.dataset.price);
+        i = option.dataset.name;
+  
+        showNum('sum', m.toLocaleString()+'원');
+        document.getElementById('prdName').innerHTML=i;
+        document.getElementById('price').innerHTML=m.toLocaleString()+'원';
+      }
+      n=1;
+      showNum('num',n);
+      showNum('sum',(m*n).toLocaleString()+'원');
+      j=1;
+      k=1;
+      likeBtn();
+      bellBtn();
+    });
+
+    document.getElementById('closeBtn').addEventListener('click', () => {
+      document.getElementById('prdName').innerHTML='';
+      document.getElementById('price').innerHTML='';
+      document.getElementById('sum').innerHTML='';
+      document.getElementById('num').innerHTML='1';
+      document.getElementById('product').selectedIndex = 0;
+      n=1;
+      m=0;
+      j=1;
+      k=1;
+      likeBtn();
+      bellBtn();
+    });
+
+    let j=0
+    document.getElementById('heart').addEventListener('click', likeBtn = () => {
+      if(j==0){
+        document.querySelector('.fa-heart').style.color = '#5f0080';
+        j=1;
+      }else{
+        document.querySelector('.fa-heart').style.color = '#ccc';
+        j=0;
+      }
+    });
+
+    let k=0;
+    document.getElementById('bell').addEventListener('click', bellBtn = () => {
+      if(k==0){
+        document.querySelector('.fa-bell').style.color = '#5f0080';
+        k=1;
+      }else{
+        document.querySelector('.fa-bell').style.color = '#ccc';
+        k=0;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습_파리바게트</title>
+  <!-- tailwind cdn주소 연결하기1 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    /* 모바일 스크롤 부드럽게 + 스크롤바 숨기기 */
+    .scroll-x{-webkit-overflow-scrolling:touch;}
+    .scroll-x::-webkit-scrollbar{display:none;}
+  </style>
+</head>
+<body class="bg-gray-100 p-4">
+  <h2 class="text-lg font-bold mb-3">인기상품</h2>
+
+    <!-- 가로스크롤 콘텐츠 -->
+    <div class="flex flex-nowrap gap-4 overflow-x-auto touch-pan-x overscroll-x-contain pb-3 scroll-x">
+
+      <!-- 카드디자인 -->
+      <div class="min-w-[160px] bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition relative">
+        <img src="./images/img1.jpg" alt="" class="w-full object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 bg-white">
+          <h2 class="font-semibold text-base">베리밤 고블렛잔 세트 9,900원</h2>
+          <p class="text-gray-500 text-xs mt-3">READ MORE</p>
+        </div>
+      </div>
+
+      <!-- 카드디자인 -->
+      <div class="min-w-[160px] bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition relative">
+        <img src="./images/img2.jpg" alt="" class="w-full object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 absolute z-10 bg-white bottom-0 w-full">
+          <h2 class="font-semibold text-base">동반성장 개방형 플랫폼 '상생누리' 2025</h2>
+          <p class="text-gray-500 text-sm">READ MORE</p>
+        </div>
+      </div>
+
+
+      <!-- 카드디자인 -->
+      <div class="min-w-[160px] bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition relative">
+        <img src="./images/img3.jpg" alt="" class="w-full object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 absolute z-10 bg-white bottom-0 w-full">
+          <h2 class="font-semibold text-base">호두파운드 구매 시, 우리벌꿀카스테라 증정!</h2>
+          <p class="text-gray-500 text-sm">READ MORE</p>
+        </div>
+      </div>
+
+
+      <!-- 카드디자인 -->
+      <div class="min-w-[160px] bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition relative">
+        <img src="./images/img4.jpg" alt="" class="w-full object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 absolute z-10 bg-white bottom-0 w-full">
+          <h2 class="font-semibold text-base">베리밤 케이크 3종 출시 사전예약 혜택</h2>
+          <p class="text-gray-500 text-sm">READ MORE</p>
+        </div>
+      </div>
+
+
+      <!-- 카드디자인 -->
+      <div class="min-w-[160px] bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition relative">
+        <img src="./images/img5.jpg" alt="" class="w-full object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 absolute z-10 bg-white bottom-0 w-full">
+          <h2 class="font-semibold text-base">홀리데이 케이크 사전예약, 최대 30% 혜택</h2>
+          <p class="text-gray-500 text-sm">READ MORE</p>
+        </div>
+      </div>
+
+
+      <!-- 카드디자인 -->
+      <div class="min-w-[160px] bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition relative">
+        <img src="./images/img6.jpg" alt="" class="w-full object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 absolute z-10 bg-white bottom-0 w-full">
+          <h2 class="font-semibold text-base">딸기일까? 케이크일까? 풍성한 달콤함이 터지는 베리밤 BERRY BOMB</h2>
+          <p class="text-gray-500 text-sm">READ MORE</p>
+        </div>
+      </div>
+
+
+      <!-- 카드디자인 -->
+      <div class="min-w-[160px] bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition relative">
+        <img src="./images/img7.jpg" alt="" class="w-full object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 absolute z-10 bg-white bottom-0 w-full">
+          <h2 class="font-semibold text-base">파란라벨 런치보냉백 매/장/판/매</h2>
+          <p class="text-gray-500 text-sm">READ MORE</p>
+        </div>
+      </div>
+
+
+      <!-- 카드디자인 -->
+      <div class="min-w-[160px] bg-white rounded-xl shadow overflow-hidden hover:shadow-lg transition relative">
+        <img src="./images/img8.jpg" alt="" class="w-full object-cover hover:scale-105 transition duration-300">
+        <div class="p-4 absolute z-10 bg-white bottom-0 w-full">
+          <h2 class="font-semibold text-base">더피 케이크 파바에서 만날래?</h2>
+          <p class="text-gray-500 text-sm">READ MORE</p>
+        </div>
+      </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 프로모션 -->
+  <!-- <section class="w-4/5">
+    <div class="flex justify-between">
+      <h2 class="font-bold text-2xl">PROMOTION</h2>
+      <a href="#" class="underline p-1">SHOW MORE</a>
+    </div>
+    <div class="flex">
+      <article>
+        <img src="./images/img1.jpg" alt="프로모션">
+        <h3 class="font-bold">베리밤 고블렛잔 세트 9,900원</h3>
+        <a href="#" class="text-gray-400 text-xs">READ MORE</a>
+      </article>
+      <article>
+        <img src="./images/img2.jpg" alt="프로모션">
+        <h3 class="font-bold">동반성장 개방형 플랫폼 '상생누리' 2025</h3>
+        <a href="#" class="text-gray-400 text-xs">READ MORE</a>
+      </article>
+      <article>
+        <img src="./images/img3.jpg" alt="프로모션">
+        <h3 class="font-bold">호두파운드 구매 시, 우리벌꿀카스테라 증정!</h3>
+        <a href="#" class="text-gray-400 text-xs">READ MORE</a>
+      </article>
+      <article>
+        <img src="./images/img4.jpg" alt="프로모션">
+        <h3 class="font-bold">베리밤 케이크 3종 출시 사전예약 혜택</h3>
+        <a href="#" class="text-gray-400 text-xs">READ MORE</a>
+      </article>
+      <article>
+        <img src="./images/img5.jpg" alt="프로모션">
+        <h3 class="font-bold">홀리데이 케이크 사전예약, 최대 30% 혜택</h3>
+        <a href="#" class="text-gray-400 text-xs">READ MORE</a>
+      </article>
+      <article>
+        <img src="./images/img6.jpg" alt="프로모션">
+        <h3 class="font-bold">딸기일까? 케이크일까? 풍성한 달콤함이 터지는 베리밤 BERRY BOMB</h3>
+        <a href="#" class="text-gray-400 text-xs">READ MORE</a>
+      </article>
+      <article>
+        <img src="./images/img7.jpg" alt="프로모션">
+        <h3 class="font-bold">파란라벨 런치보냉백 매/장/판/매</h3>
+        <a href="#" class="text-gray-400 text-xs">READ MORE</a>
+      </article>
+      <article>
+        <img src="./images/img8.jpg" alt="프로모션">
+        <h3 class="font-bold">더피 케이크 파바에서 만날래?</h3>
+        <a href="#" class="text-gray-400 text-xs">READ MORE</a>
+      </article>
+    </div>
+  </section> -->
+
+  <!-- 우측 내비게이션 -->
+  <nav class="fixed right-8 bottom-8 bg-black rounded-md py-2 px-1">
+    <a href="#" title="" class="text-gray-400 block p-2 text-center hover:text-white transition">
+      <div class="flex justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
+      </div>
+      <p class="text-xs">TOP</p>
+      <span class="border-b pb-3 block hover:text-gray-400"></span>
+    </a>
+    <a href="#" title="" class="text-gray-400 block p-2 text-center hover:text-white transition">
+      <div class="flex justify-center mb-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+        </svg>
+
+      </div>
+      <p class="text-xs">매장정보</p>
+    </a>
+    <a href="#" title="" class="text-gray-400 block p-2 text-center hover:text-white transition">
+      <div class="flex justify-center mb-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+        </svg>
+      </div>
+      <p class="text-xs">주문정보</p>
+    </a>
+    <a href="#" title="" class="text-gray-400 block p-2 text-center hover:text-white transition">
+      <div class="flex justify-center mb-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" />
+        </svg>
+      </div>
+      <p class="text-xs">창업 안내</p>
+    </a>
+    <a href="#" title="" class="text-gray-400 block p-2 text-center hover:text-white transition">
+      <div class="flex justify-center mb-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+      </div>
+      <p class="text-xs">알바지원</p>
+    </a>
+    <a href="#" title="" class="text-gray-400 block p-2 text-center hover:text-white transition">
+      <div class="flex justify-center mb-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linejoin="round" d="M6.75 3.744h-.753v8.25h7.125a4.125 4.125 0 0 0 0-8.25H6.75Zm0 0v.38m0 16.122h6.747a4.5 4.5 0 0 0 0-9.001h-7.5v9h.753Zm0 0v-.37m0-15.751h6a3.75 3.75 0 1 1 0 7.5h-6m0-7.5v7.5m0 0v8.25m0-8.25h6.375a4.125 4.125 0 0 1 0 8.25H6.75m.747-15.38h4.875a3.375 3.375 0 0 1 0 6.75H7.497v-6.75Zm0 7.5h5.25a3.75 3.75 0 0 1 0 7.5h-5.25v-7.5Z" />
+        </svg>
+      </div>
+      <p class="text-xs">파바앱</p>
+    </a>
+  </nav>
+</body>
+</html>

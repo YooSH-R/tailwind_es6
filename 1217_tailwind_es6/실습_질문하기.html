@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>실습_질문하기</title>
+  <!-- tailwind cdn주소 연결하기 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-green-100">
+  <p class="text-green-900 text-end font-bold mr-5 mb-10 mt-3">Question</p>
+  <p class="text-green-900 text-4xl font-bold text-end mr-5">정성을 다해 답변을<br>해드리겠습니다</p>
+  <div class="mx-auto w-9/10 mt-20">
+    <form name="" method="post" action="">
+      <div class="flex">
+        <!-- 성함, 전화번호, 이메일 -->
+        <div>
+          <div class="">
+            <label for="name">성함</label>
+            <input type="text" id="name" name="name" placeholder="성함을 입력해주세요">
+          </div>
+  
+          <div>
+            <label for="tel">전화번호</label>
+            <input type="text" id="tel" name="tel" placeholder="전화번호를 입력해주세요">
+          </div>
+  
+          <div>
+            <label for="email">이메일</label>
+            <input type="text" id="email" name="email" placeholder="이메일을 입력해주세요">
+          </div>
+        </div>
+        <!-- 내용 -->
+        <div>
+          <div>
+            <label for="txtbox">내용</label>
+            <input type="text" id="txtbox" name="txtbox" placeholder="내용을 입력해주세요">
+          </div>
+        </div>
+      </div>
+
+      <div class="flex">
+        <div>
+          <input type="checkbox" id="agree">
+          <label for="agree">개인정보처리방침 동의합니다</label>
+        </div>
+        <div>
+          <input type="submit" value="SEND">
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
